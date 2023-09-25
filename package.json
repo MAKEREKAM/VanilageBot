@@ -1,0 +1,12 @@
+{
+  "name": "vanilagebot",
+  "version": "1.0.0",
+  "description": "Vanilage Discord Bot!",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MAKEREKAM",
+  "license": "MIT"
+}
