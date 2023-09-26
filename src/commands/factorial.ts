@@ -1,5 +1,5 @@
 import {ApplicationCommandOptionType, EmbedBuilder} from "discord.js";
-import {SlashCommand} from "../../types/slashCommand";
+import {SlashCommand} from "../types/slashCommand";
 
 export const factorial: SlashCommand = {
     name: "factorial",
@@ -20,8 +20,8 @@ export const factorial: SlashCommand = {
             .setColor(0x000000)
             .setTitle("Result")
             .addFields(
-                {name: "Request", value: `$arg` + "!"},
-                {name: "Result", value: `$result`}
+                {name: "Request", value: `${arg}!`},
+                {name: "Result", value: `${result}`}
             )
         await interaction.followUp({
             ephemeral: true,
@@ -33,6 +33,7 @@ export const factorial: SlashCommand = {
 function getFactorial(x: number): number {
     if (x < 0) return -1
     if (x == 0) return 1
+    if (x > 170) return -1
 
     return x * getFactorial(x - 1)
 }
