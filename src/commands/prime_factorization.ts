@@ -2,8 +2,8 @@ import {SlashCommand} from "../types/slashCommand";
 import {ApplicationCommandOptionType, EmbedBuilder} from "discord.js";
 
 export const prime_factorization: SlashCommand = {
-    name: "prime_factorization",
-    description: "Print Prime Factorization Result.",
+    name: "소인수분해",
+    description: "소인수분해",
     options:[
         {
             required:true,
@@ -20,7 +20,7 @@ export const prime_factorization: SlashCommand = {
             .setColor(0x000000)
             .setTitle("Result")
             .addFields(
-                {name: "Request", value: `${arg} Prime Factorization`},
+                {name: "Request", value: `${arg} 소인수분해`},
                 {name: "Result", value: `${result}`}
             )
         await interaction.followUp({

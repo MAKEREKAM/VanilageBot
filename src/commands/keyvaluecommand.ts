@@ -3,8 +3,8 @@ import {SlashCommand} from "../types/slashCommand";
 import {addValue, getValue} from "../keyvalueio";
 
 export const writekey: SlashCommand = {
-    name: "writekey",
-    description: "Write text in database.",
+    name: "쓰기",
+    description: "데이터베이스에 값 넣기",
     options:[
         {
             required:true,
@@ -40,8 +40,8 @@ export const writekey: SlashCommand = {
 };
 
 export const readkey: SlashCommand = {
-    name: "readkey",
-    description: "Get text in database.",
+    name: "읽기",
+    description: "데이터베이스에 있는 값 불러오기",
     options:[
         {
             required:true,

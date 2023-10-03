@@ -2,8 +2,8 @@ import {ApplicationCommandOptionType, EmbedBuilder} from "discord.js";
 import {SlashCommand} from "../types/slashCommand";
 
 export const factorial: SlashCommand = {
-    name: "factorial",
-    description: "Print Factorial.",
+    name: "팩토리얼",
+    description: "팩토리얼 출력",
     options:[
         {
             required:true,

@@ -3,7 +3,7 @@ import {ApplicationCommandOptionType, EmbedBuilder} from "discord.js";
 
 export const dex_to_hex: SlashCommand = {
     name: "dec_to_hex",
-    description: "Print Dec->Hex",
+    description: "Dec->Hex",
     options:[
         {
             required:true,
@@ -31,7 +31,7 @@ export const dex_to_hex: SlashCommand = {
 
 export const dex_to_bin: SlashCommand = {
     name: "dec_to_bin",
-    description: "Print Dec->Bin",
+    description: "Dec->Bin",
     options:[
         {
             required:true,
@@ -59,7 +59,7 @@ export const dex_to_bin: SlashCommand = {
 
 export const hex_to_dec: SlashCommand = {
     name: "hex_to_dec",
-    description: "Print Hex->Dec",
+    description: "Hex->Dec",
     options:[
         {
             required:true,
@@ -87,7 +87,7 @@ export const hex_to_dec: SlashCommand = {
 
 export const hex_to_bin: SlashCommand = {
     name: "hex_to_bin",
-    description: "Print Hex->Bin",
+    description: "Hex->Bin",
     options:[
         {
             required:true,
@@ -115,7 +115,7 @@ export const hex_to_bin: SlashCommand = {
 
 export const bin_to_dec: SlashCommand = {
     name: "bin_to_dec",
-    description: "Print Bin->Dec",
+    description: "Bin->Dec",
     options:[
         {
             required:true,
@@ -143,7 +143,7 @@ export const bin_to_dec: SlashCommand = {
 
 export const bin_to_hex: SlashCommand = {
     name: "bin_to_hex",
-    description: "Print Bin->Hex",
+    description: "Bin->Hex",
     options:[
         {
             required:true,

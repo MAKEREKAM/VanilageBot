@@ -8,7 +8,5 @@ export function addValue(key: string | number | undefined | boolean, value: stri
 
 export function getValue(key: string | number | undefined | boolean) : string {
     const json = JSON.parse(fs.readFileSync("src/keyvalue.json").toString())
-    const result = json[key as string]
-
-    return result
+    return json[key as string]
 }
