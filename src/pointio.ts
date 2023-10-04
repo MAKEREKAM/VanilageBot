@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-function addPoint(userid : string , value : number) {
+export function addPoint(userid : string , value : number) {
     if (!isExistAccount(userid)) {
         setupPoint(userid)
     }
@@ -12,11 +12,11 @@ function addPoint(userid : string , value : number) {
 
 export function getPoint(userid : string) : string {
     const json = JSON.parse(fs.readFileSync("src/point.json").toString())
-    return json[userid]
+    return (json.hasOwnProperty(userid)) ? json[userid] : 0
 }
 
 function setupPoint(userid : string) {
-    const json = JSON.parse(fs.readFileSync("src/point.json").toString())
+    let json = JSON.parse(fs.readFileSync("src/point.json").toString())
     json[userid] = 0
     fs.writeFileSync("src/point.json", JSON.stringify(json))
 }
@@ -40,7 +40,7 @@ export function dailyRequest(userid : string) : number {
         return -1
     }
 
-    const json = JSON.parse(fs.readFileSync("src/dailyrequest.json").toString())
+    let json = JSON.parse(fs.readFileSync("src/dailyrequest.json").toString())
 
     if (!json.hasOwnProperty(userid)) {
         setupDailyRequest(userid)
@@ -50,7 +50,7 @@ export function dailyRequest(userid : string) : number {
         const date = new Date()
 
         json[userid] = date.getFullYear().toString() + date.getMonth().toString() + date.getDate().toString();
-        fs.writeFileSync("src/dailyrequest", JSON.stringify(json))
+        fs.writeFileSync("src/dailyrequest.json", JSON.stringify(json))
 
         addPoint(userid, 1000 + Math.floor(Math.random() * 100))
     }
@@ -59,12 +59,12 @@ export function dailyRequest(userid : string) : number {
 }
 
 function setupDailyRequest(userid : string) {
-    const json = JSON.parse(fs.readFileSync("src/dailyrequest.json").toString())
+    let json = JSON.parse(fs.readFileSync("src/dailyrequest.json").toString())
 
     const date = new Date()
 
     json[userid] = date.getFullYear().toString() + date.getMonth().toString() + date.getDate().toString();
-    fs.writeFileSync("src/dailyrequest", JSON.stringify(json))
+    fs.writeFileSync("src/dailyrequest.json", JSON.stringify(json))
 
     addPoint(userid, 1000)
 }
